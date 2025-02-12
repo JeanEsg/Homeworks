@@ -109,4 +109,3 @@ const flechaParImpar = (num) => {
     } else {
       console.log("Impar");
     }
-}

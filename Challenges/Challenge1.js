@@ -101,7 +101,7 @@ function regularParImpar(num) {
     } else {
       console.log("Impar");
     }
-  }
+  };
 
 const flechaParImpar = (num) => {
     if (num % 2 === 0) {
@@ -109,3 +109,4 @@ const flechaParImpar = (num) => {
     } else {
       console.log("Impar");
     }
+};

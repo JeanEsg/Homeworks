@@ -330,6 +330,224 @@ console.log(numeros17.flat()); // [1, 2, 4, 5, 6]
 
 
 // FlatMap: se usa para mapear cada elemento de un array y aplanar el resultado en un nuevo array.
+// Sintaxis: array.flatMap(callback(elemento, índice, array), thisArg);
+// callback → Función que se ejecuta en cada elemento.
+// elemento → Elemento actual del array.
+// índice (opcional) → Posición del elemento en el array.
+// array (opcional) → El array completo.
+// thisArg (opcional) → Valor a usar como this dentro del callback.
+
+// Multiplicar valores y aplanar el resultado
+const numeros18 = [1, 2, 3];
+const resultado = numeros18.flatMap(num => [num, num * 2]);
+console.log(resultado); // [1, 2, 2, 4, 3, 6]
+
+// Comparación entre .map().flat(1) y .flatMap()
+const numeros19 = [1, 2, 3];
+
+const resultado1 = numeros19.map(num => [num, num * 2]).flat();
+console.log(resultado1); // [1, 2, 2, 4, 3, 6]
+
+const resultado2 = numeros19.flatMap(num => [num, num * 2]);
+console.log(resultado2); // [1, 2, 2, 4, 3, 6]
+
+// Eliminar elementos transformados
+const palabras3 = ["hola", "mundo", "JS", "web"];
+const resultado3 = palabras3.flatMap(palabra => palabra.length > 3 ? palabra : []);
+console.log(resultado3); // ["hola", "mundo"]
+
+// Expandiendo texto
+const frases = ["Hola mundo", "JS es genial"];
+const palabrasSeparadas = frases.flatMap(frase => frase.split(" "));
+console.log(palabrasSeparadas); // ["Hola", "mundo", "JS", "es", "genial"]
+
+// Usando thisArg
+const multiplicador = { factor: 2 };
+const numeros20 = [1, 2, 3];
+
+const resultado4 = numeros.flatMap(function (n) {
+  return [n, n * this.factor];
+}, multiplicador);
+
+console.log(resultado); // [1, 2, 2, 4, 3, 6]
+
+
+// ForEach: se usa para ejecutar una función en cada elemento de un array, pero no devuelve uno nuevo.
+// Sintaxis: array.forEach(callback(elemento, índice, array), thisArg);
+// callback → Función que se ejecuta en cada elemento.
+// elemento → Elemento actual del array.
+// índice (opcional) → Posición del elemento en el array.
+// array (opcional) → El array completo.
+// thisArg (opcional) → Valor a usar como this dentro del callback.
+
+// Recorrer un array e imprimir valores
+const numeros21 = [1, 2, 3, 4];
+
+numeros21.forEach(num => console.log(num));
+// 1
+// 2
+// 3
+// 4
+
+// Recorrer un array con índices
+const letras2 = ["a", "b", "c"];
+letras2.forEach((letra, i) => console.log(`Índice ${i}: ${letras2}`));
+// Índice 0: a
+// Índice 1: b
+// Índice 2: c
+
+// Modificar elementos dentro del array
+const numeros22 = [1, 2, 3];
+numeros22.forEach((num, i, arr) => arr[i] = num * 2);
+console.log(numeros22); // [2, 4, 6]
+
+// Usando thisArg
+
+const doble = { factor: 2 };
+const numeros23 = [1, 2, 3];
+
+numeros23.forEach(function (num) {
+  console.log(num * this.factor);
+}, doble);
+// 2
+// 4
+// 6
+
+
+// Includes: se usa para verificar si un array contiene un elemento específico.
+// Devuelve true si lo encuentra, de lo contrario, false.
+// Sintaxis: array.includes(valor, inicio);
+// valor → Elemento a buscar en el array.
+// inicio (opcional) → Índice de inicio de la búsqueda.
+
+// Verificar si un array contiene un número
+const numeros24 = [1, 2, 3, 4, 5];
+
+console.log(numeros24.includes(3)); // true
+console.log(numeros24.includes(6)); // false
+
+//Usar el parámetro desde
+const letras3 = ["a", "b", "c", "d", "e"];
+
+console.log(letras3.includes("c", 2)); // true
+console.log(letras3.includes("c", 3)); // false
+
+// Buscar valores NaN
+const valores4 = [1, 2, NaN, 4, 5];
+
+console.log(valores4.includes(NaN)); // true
+
+
+// IndexOf: busca un valor en un array y devuelve su índice. Si no lo encuentra, devuelve -1.
+// Sintaxis: array.indexOf(valor, inicio);
+// valor → Elemento a buscar en el array.
+// inicio (opcional) → Índice de inicio de la búsqueda.
+
+// Encontrar el índice de un número
+const numeros25 = [1, 2, 3, 4, 5];
+
+console.log(numeros25.indexOf(3)); // 2
+console.log(numeros25.indexOf(6)); // -1
+
+// Usar el parámetro desde
+const letras4 = ["a", "b", "c", "d", "e"];
+
+console.log(letras4.indexOf("c", 2)); // 2
+console.log(letras4.indexOf("c", 3)); // -1
+
+// Buscar elementos que no existen
+const valores5 = [1, 2, 3, 4, 5];
+
+console.log(valores5.indexOf(0)); // -1
+console.log(valores5.indexOf(6)); // -1
+
+
+// Join: convierte un array en una cadena de texto, separando los elementos con el separador que elijas.
+// Sintaxis: array.join(separador);
+// separador (opcional) → Carácter que se usa para separar los elementos.
+
+// Convertir un array en una cadena de texto
+const frutas2 = ["manzana", "banana", "cereza"];
+console.log(frutas2.join()); // "manzana,banana,cereza"
+
+// Unir números en una cadena
+const numeros26 = [1, 2, 3, 4, 5];
+console.log(numeros26.join(" - ")); // "1 - 2 - 3 - 4 - 5"
+
+// Convertir un array en una URL
+const ruta = ["home", "productos", "item"];
+console.log(ruta.join("/")); // "home/productos/item"
+
+// Formatear un mensaje
+const mensaje = ["Ana", "Luis", "María"];
+console.log(`Participantes: ${mensaje.join(", ")}`); // "Participantes: Ana, Luis, María"
+
+// Convertir un array en una cadena de texto con espacios
+const letras5 = ["a", "b", "c", "d", "e"];
+console.log(letras5.join(" ")); // "a b c d e"
+
+
+// Keys:  devuelve un iterador con las claves (índices) de los elementos de un array.
+// Sintaxis: array.keys()
+
+// Obtener las claves de un array
+const frutas3 = ["manzana", "banana", "cereza"];
+const iterador1 = frutas3.keys();
+
+for (const clave of iterador1) {
+  console.log(clave);
+}
+// 0
+// 1
+// 2
+
+// Convertir el iterador en un array
+const letras6 = ["a", "b", "c"];
+const indices = Array.from(letras6.keys());
+console.log(indices); // [0, 1, 2]
+
+// Usar las claves para acceder a los elementos
+const frutas4 = ["manzana", "banana", "cereza"];
+const iterador2 = frutas4.keys();
+
+for (const clave of iterador2) {
+  console.log(frutas4[clave]);
+}
+// "manzana"
+// "banana"
+// "cereza"
+
+// .keys() en un array con huecos (empty slots)
+const arreglo = [10, , 30]; // Índice 1 está vacío
+
+const iterador3 = arreglo.keys();
+for (let clave of iterador3) {
+  console.log(clave);
+}
+// 0
+// 1
+// 2
+
+
+// LastIndexOf: busca un valor en un array y devuelve su última aparición (su índice más alto). Si el valor no existe, devuelve -1.
+// Sintaxis: array.lastIndexOf(valor, inicio);
+// valor → Elemento a buscar en el array.
+// inicio (opcional) → Índice de inicio de la búsqueda.
+
+// Encontrar la última aparición de un número
+const numeros27 = [10 , 20, 30, 40, 20, 50];
+
+console.log(numeros27.lastIndexOf(20)); // 4
+console.log(numeros27.lastIndexOf(60)); // -1
+
+// Buscar desde una posición específica
+const letras7 = ["a", "b", "c", "d", "b", "e"];
+console.log(letras7.lastIndexOf("a")); // 3
+console.log(letras7.lastIndexOf("a", 2)); // 0
+
+// .lastIndexOf() no detecta NaN
+const valores6 = [1, 2, NaN, 4, 5]; 
+console.log(valores6.lastIndexOf(NaN)); // -1
 
 
 

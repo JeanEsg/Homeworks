@@ -1,9 +1,9 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useState } from "react"
 
-const AuthContext = createContext()
+export const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
-    const [logged, setUser] = useState(null)
+    const [user, setUser] = useState(null)
 
     const login = (username) => {
         setUser(username)
@@ -13,12 +13,8 @@ export const AuthProvider = ({ children }) => {
     }
 
     return (
-        <AuthContext.Provider value={{ logged, login, logout}}>
-            { children }
+        <AuthContext.Provider value={{ user, login, logout }}>
+            {children}
         </AuthContext.Provider>
     )
 }
-
-export const useAuth = () => {
-    return useContext(AuthContext);
-  };

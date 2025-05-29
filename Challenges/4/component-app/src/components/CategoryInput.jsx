@@ -9,7 +9,7 @@ const CategoryInput = ({ onNewCategory }) => {
 
     const handleAddClick = () => {
         onNewCategory(category);
-        setCategory(''); // Limpiar input
+        setCategory('');
     };
 
     return (

@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const Login = () => {
     const [username, setUsername] = useState("");
-    const { login, user } = useContext(AuthContext);  // Accedemos al estado user desde el contexto
+    const { login, user } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const [error, setError] = useState("");

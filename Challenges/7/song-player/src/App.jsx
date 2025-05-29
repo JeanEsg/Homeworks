@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-// Clase Nodo para lista enlazada simple
 class Node {
   constructor(value) {
     this.value = value;
@@ -8,7 +7,6 @@ class Node {
   }
 }
 
-// Clase Lista Enlazada
 class LinkedList {
   constructor() {
     this.head = null;
@@ -35,7 +33,6 @@ class LinkedList {
   }
 }
 
-// Componente React para la lista de canciones
 function SongPlayer() {
   const [playlist] = useState(() => {
     const list = new LinkedList();

@@ -1,4 +1,3 @@
-// src/redux/slices/firebaseSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const firebaseSlice = createSlice({

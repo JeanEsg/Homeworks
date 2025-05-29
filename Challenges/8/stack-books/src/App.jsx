@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-// Clase Stack para manejar la pila de libros
 class Stack {
   constructor() {
     this.items = [];

@@ -127,7 +127,6 @@ export const deleteUserData = (uid) => {
         await deleteUser(user);
       }
 
-      // 3. Desloguear
       dispatch(logout());
     } catch (error) {
       console.error("Error eliminando el usuario:", error.message);

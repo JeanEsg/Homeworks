@@ -20,7 +20,7 @@ export const authSlice = createSlice({
       state.status = "authenticated";
       state.uid = action.payload.uid;
       state.email = action.payload.email;
-      state.displayName = action.payload.displayName; // 🔥 Agregado
+      state.displayName = action.payload.displayName;
       state.photoUrl = action.payload.photoURL;
       state.errorMessage = null;
     },

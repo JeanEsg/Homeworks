@@ -11,13 +11,11 @@ const MessageScreen = () => {
     const [user] = useState(() => "User_" + Math.floor(Math.random() * 1000));
     const bottomRef = useRef(null);
 
-    // ⬇️ Este useEffect monta el listener al cargar el componente
     useEffect(() => {
         dispatch(listenMessagesThunk());
     }, [dispatch]);
 
     useEffect(() => {
-        // Scroll al último mensaje
         bottomRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 

@@ -10,7 +10,7 @@ export const App = () => {
   const [inputValueCount, setInputValueCount] = useState("")
   const [inputValueStack, setInputValueStack] = useState("")
 
-  //Counter Handles
+
   const handleClickInc = () => {
     dispatch(increment())
   };
@@ -25,7 +25,6 @@ export const App = () => {
     };
   };
 
-  //Stack Handles
   const handleClickPush = () => {
     if (inputValueStack.trim() !== "") {
       dispatch(push(inputValueStack))

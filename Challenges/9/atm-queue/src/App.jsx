@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-// Clase Queue para manejar la cola de personas
 class Queue {
   constructor() {
     this.items = [];

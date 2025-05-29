@@ -19,7 +19,7 @@ function App() {
     password: '123456'
   });
 
-  const [newDisplayName, setNewDisplayName] = useState(""); // 🔹 Nuevo estado
+  const [newDisplayName, setNewDisplayName] = useState("");
 
   const { status, email, displayName, uid } = useSelector((state) => state.auth);
 
@@ -30,7 +30,6 @@ function App() {
 
       dispatch(login({ uid, email, displayName, photoURL }));
 
-      // Este console.log sí tiene los valores correctos
       console.log("uid:", uid, "Name:", displayName);
     } catch (error) {
       console.error("Login error:", error.message);
